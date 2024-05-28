@@ -3,16 +3,12 @@
 The trained model classifies images into two classes "Healthy" or "Coccidiosis"(the task itself not relevant here).
 
 ## Workflows
+1. For every pipeline the artifact configuration (input/outputs destination) is added to the config.yaml.
+2. Then an entity is created to hold the config variables revelant to each pipeline.
+3. The configuration manager is responsible for reading the config.yaml and creating the entities for each pipeline.
+4. The pipeline is coded using the components classes and the entities.
+5. Finally the main.py executes all pipelines.
 
-1. Update config.yaml
-2. Update secrets.yaml [Optional]
-3. Update params.yaml
-4. Update the entity
-5. Update the configuration manager in src config
-6. Update the components
-7. Update the pipeline 
-8. Update the main.py
-9. Update the dvc.yaml
 
 
 # How to run?
