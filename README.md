@@ -11,7 +11,7 @@ The trained model classifies images into two classes "Healthy" or "Coccidiosis"(
 
 
 
-# How to run?
+# How to run the prediction app?
 
 ### STEP 01 - Clone the repository
 
@@ -25,7 +25,12 @@ python app.py
 ```
 ### STEP 04 - Go to localhost:8080
 
-###(OPTIONAL) To run the pipeline for training and saving a model you can use DVC with the dvc config coded in dvc.yaml. Execute the following commands in the project repo.
+# How to run the training pipeline?
+###Just execute the main.py.
+```bash
+python main.py
+```
+###To run the pipeline for training and saving a model you can use DVC with the dvc config coded in dvc.yaml. Execute the following commands in the project repo.
 ```bash
 dvc init
 dvc repro
