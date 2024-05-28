@@ -23,14 +23,14 @@ jobs:
       uses: docker/login-action@v2
       with:
         registry: https://myflaskapp123.azurecr.io/
-        username: ${{ secrets.AzureAppService_ContainerUsername_7ec709cb7dfc4eeea7d4358b14fe4f81 }}
-        password: ${{ secrets.AzureAppService_ContainerPassword_60827c7b6b03414f827176a3bffd34d2 }}
+        username: ${{ secrets.AzureAppService_ContainerUsername_6f8fcdab798843cc95653437b1706823 }}
+        password: ${{ secrets.AzureAppService_ContainerPassword_e0341b6e0ce74e6aa9cd4e50a5a0d9c0 }}
 
     - name: Build and push container image to registry
       uses: docker/build-push-action@v3
       with:
         push: true
-        tags: myflaskapp123.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_7ec709cb7dfc4eeea7d4358b14fe4f81 }}/chicken:${{ github.sha }}
+        tags: myflaskapp123.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_6f8fcdab798843cc95653437b1706823 }}/my-flask-app:${{ github.sha }}
         file: ./Dockerfile
 
   deploy:
@@ -47,5 +47,5 @@ jobs:
       with:
         app-name: 'ChickenFlaskApp'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_0ae061643f08438da06f7efa5bddc472 }}
-        images: 'myflaskapp123.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_7ec709cb7dfc4eeea7d4358b14fe4f81 }}/chicken:${{ github.sha }}'
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_80aa001f65ad4570937df3307fcaaa9f }}
+        images: 'myflaskapp123.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_6f8fcdab798843cc95653437b1706823 }}/my-flask-app:${{ github.sha }}'
