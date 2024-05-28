@@ -1,46 +1,41 @@
-from flask import Flask, request, jsonify, render_template
+import gradio as gr
+import numpy as np
+from tensorflow.keras.models import load_model
+from tensorflow.keras.preprocessing import image
 import os
-from flask_cors import CORS, cross_origin
-from src.cnnClassifier.utils.common import decodeImage
-from src.cnnClassifier.pipeline.predict import PredictionPipeline
 
+class PredictionPipeline:
+    def __init__(self, model_path):
+        self.model = load_model(model_path)
 
-os.putenv('LANG', 'en_US.UTF-8')
-os.putenv('LC_ALL', 'en_US.UTF-8')
+    def predict(self, img_path):
+        test_image = image.load_img(img_path, target_size=(224, 224))
+        test_image = image.img_to_array(test_image)
+        test_image = np.expand_dims(test_image, axis=0)
+        result = np.argmax(self.model.predict(test_image), axis=1)
 
-app = Flask(__name__)
-CORS(app)
+        if result[0] == 1:
+            prediction = 'Healthy'
+        else:
+            prediction = 'Coccidiosis'
 
+        return prediction
 
-class ClientApp:
-    def __init__(self):
-        self.filename = "inputImage.jpg"
-        self.classifier = PredictionPipeline(self.filename)
+def predict_image(img):
+    img_path = 'temp_image.jpg'
+    img.save(img_path)
+    pipeline = PredictionPipeline(os.path.join("artifacts", "training", "model.h5"))
+    prediction = pipeline.predict(img_path)
+    return prediction
 
-
-@app.route("/", methods=['GET'])
-@cross_origin()
-def home():
-    return render_template('index.html')
-
-
-@app.route("/train", methods=['GET', 'POST'])
-@cross_origin()
-def trainRoute():
-    os.system("dvc repro")
-    return "Training done successfully!"
-
-@app.route("/predict", methods=['POST'])
-@cross_origin()
-def predictRoute():
-    image = request.json['image']
-    decodeImage(image, clApp.filename)
-    result = clApp.classifier.predict()
-    return jsonify(result)
-
+# Gradio Interface
+interface = gr.Interface(
+    fn=predict_image,
+    inputs=gr.Image(type='pil'),
+    outputs=gr.Textbox(label="Prediction"),
+    title="Chicken Disease Classifier",
+    description="Upload an image of a chicken to classify if it's Healthy or has Coccidiosis."
+)
 
 if __name__ == "__main__":
-    clApp = ClientApp()
-    #app.run(host='0.0.0.0', port=8080) #local host
-    # app.run(host='0.0.0.0', port=8080) #for AWS
-    app.run(host='0.0.0.0', port=80) #for AZURE
+    interface.launch()
