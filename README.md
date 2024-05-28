@@ -1,6 +1,6 @@
 # End to end project using pipelines from data ingestion, model training, evaluation and prediction. The prediction is done using an App. A docker was also built and deployed in a Google Cloud Run service.
 
-Classifying images into two classes "Healthy" or "Coccidiosis". This project serves as a example for developing data ingestion, model creation, model training and model evaluation pipelines using python classes. 
+The trained model classifies images into two classes "Healthy" or "Coccidiosis"(the task itself not relevant here).
 
 ## Workflows
 
