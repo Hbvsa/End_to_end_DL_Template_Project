@@ -1,4 +1,5 @@
 ##End to end project with pipelines, docker and deployment
+
 Classifying images into two classes "Healthy" or "Coccidiosis". This project serves as a example for developing data ingestion, model creation, model training and model evaluation pipelines using python classes. 
 
 ## Workflows
