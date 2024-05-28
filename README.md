@@ -12,32 +12,22 @@ The trained model classifies images into two classes "Healthy" or "Coccidiosis"(
 
 
 # How to run?
-### STEPS:
 
-Clone the repository
-
-```bash
-https://github.com/entbappy/Chicken-Disease-Classification--Project
+### STEP 01 - Clone the repository
 
 ### STEP 02- install the requirements
 ```bash
 pip install -r requirements.txt
 ```
-
-
 ```bash
 # Finally run the following command
 python app.py
 ```
-
 Now,
 ```bash
 open up you local host and port
 ```
-
-
-### DVC cmd
-
+### DVC cmd - to run the DVC the dvc file config is already setup. Just need to execute the following commands inside the project repo.
 1. dvc init
 2. dvc repro
 3. dvc dag
