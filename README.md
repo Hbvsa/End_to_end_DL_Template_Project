@@ -19,14 +19,12 @@ The trained model classifies images into two classes "Healthy" or "Coccidiosis"(
 ```bash
 pip install -r requirements.txt
 ```
+### STEP 03- Run the app
 ```bash
-# Finally run the following command
 python app.py
 ```
-Now,
-```bash
-open up you local host and port
-```
+### STEP 04 - Go to localhost:8080
+
 ### To run DVC just need to execute the following commands inside the project repo. The dvc config is coded in dvc.yaml
 1. dvc init
 2. dvc repro
