@@ -27,7 +27,7 @@ Now,
 ```bash
 open up you local host and port
 ```
-### DVC cmd - to run the DVC the dvc file config is already setup. Just need to execute the following commands inside the project repo.
+### To run DVC just need to execute the following commands inside the project repo. The dvc config is coded in dvc.yaml
 1. dvc init
 2. dvc repro
 3. dvc dag
