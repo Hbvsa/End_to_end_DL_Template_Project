@@ -26,11 +26,11 @@ python app.py
 ### STEP 04 - Go to localhost:8080
 
 # How to run the training pipeline?
-###Just execute the main.py.
+Just execute the main.py.
 ```bash
 python main.py
 ```
-###To run the pipeline for training and saving a model you can use DVC with the dvc config coded in dvc.yaml. Execute the following commands in the project repo.
+### To run the pipeline for training and saving a model you can use DVC with the dvc config coded in dvc.yaml. Execute the following commands in the project repo.
 ```bash
 dvc init
 dvc repro
