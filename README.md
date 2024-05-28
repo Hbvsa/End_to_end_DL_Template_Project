@@ -25,7 +25,7 @@ python app.py
 ```
 ### STEP 04 - Go to localhost:8080
 
-### To run DVC just need to execute the following commands inside the project repo. The dvc config is coded in dvc.yaml
+###(OPTIONAL) To run DVC just need to execute the following commands inside the project repo. The dvc config is coded in dvc.yaml
 1. dvc init
 2. dvc repro
 3. dvc dag
