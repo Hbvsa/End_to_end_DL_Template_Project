@@ -4,7 +4,7 @@ The trained model classifies images into two classes "Healthy" or "Coccidiosis"(
 
 ## Workflows
 1. For every pipeline the artifact configuration (input/outputs destination) is added to the config.yaml. (Open and give a quick look at config.yaml)
-2. Then an entity is created to hold the config variables revelant to each pipeline. (Open config.yamlsrc/ccnClassifier/entity/config_entity to see)
+2. Then an entity is created to hold the config variables revelant to each pipeline. (Open src/ccnClassifier/entity/config_entity to see)
 3. The configuration manager is responsible for reading the config.yaml and creating the entities for each pipeline. (located at src/cnnClassifier/config/configuration.py)
 4. The pipeline is coded using the components classes and the entities. (check pipelines at src/cnnClassifier/pipeline/)
 5. Finally the main.py executes all pipelines.
