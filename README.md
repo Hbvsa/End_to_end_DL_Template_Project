@@ -47,7 +47,7 @@ The dockerfile in question works but is not optimized if the objective is just r
 - requirements.txt
 - Dockerfile
 
-To test deploying the model in a easy and straightforward way we the following Dockerfile in a huggingface space.
+To test deploying the model in a easy and straightforward way copy the 4 files into a HuggingFace space for docker https://huggingface.co/docs/hub/spaces-sdks-docker and edit the dockerfile with the following config.
 ```
 FROM python:3.11
 
@@ -64,5 +64,3 @@ ENV GRADIO_SERVER_NAME="0.0.0.0"
 
 CMD ["python", "app.py"]
 ```
-
-Just create a Hugging Face Space for Docker and transfer those 4 files to the repository of the space. https://huggingface.co/docs/hub/spaces-sdks-docker
