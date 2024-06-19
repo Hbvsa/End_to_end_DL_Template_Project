@@ -41,7 +41,7 @@ dvc dag
 
 # Docker
 
-The dockerfile in question works but is not optimized if the objective is just running the app. To create a lighter image please consider creating a folder like with just the following files:
+The dockerfile in question works but is not optimized if the objective is just running the app. To create a lighter image please consider creating a folder with just the following files:
 - app.py
 - model.h5 (will be at End_to_end_chicken\artifacts\training after running the training pipeline)
 - requirements.txt
