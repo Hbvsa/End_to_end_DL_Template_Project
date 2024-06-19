@@ -2,7 +2,7 @@
 
 ## Intro
 
-![Project high level overview](assets/high_level_overview.png)
+![Project high level overview](assets/overview_image.png)
 
 This project demonstrates how to create data ingestion, model training, evaluation and prediction pipelines. An app is also built using Gradio to interact with the model locally using a simple interface. A dockerfile is also provided to build a docker image of the project. The docker image was deployed in a Google Cloud Run service to test the remote app deployability. Alternatively the model was also deployed to an Hugging Face space. This is a template project to use for any machine learning pipeline and prediction app.
 # How to run the project?
