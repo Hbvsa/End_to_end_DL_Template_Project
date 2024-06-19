@@ -2,7 +2,7 @@
 
 ## Intro
 
-![[Drawing 2024-06-19 18.23.24.excalidraw|1080]]
+![Project high level overview](https://github.com/Hbvsa/End_to_end_DL_Template_Project/blob/main/assets/Drawing%202024-06-19%2018.23.24.excalidraw.md)
 
 This project demonstrates how to create data ingestion, model training, evaluation and prediction pipelines. An app is also built using Gradio to interact with the model locally using a simple interface. A dockerfile is also provided to build a docker image of the project. The docker image was deployed in a Google Cloud Run service to test the remote app deployability. Alternatively the model was also deployed to an Hugging Face space. This is a template project to use for any machine learning pipeline and prediction app.
 # How to run the project?
