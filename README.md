@@ -1,6 +1,6 @@
 # End to end project using pipelines from data ingestion, model training, evaluation and prediction. The prediction is done using an App. A docker was also built and deployed in a Google Cloud Run service.
 
-The trained model classifies images into two classes "Healthy" or "Coccidiosis"(the task itself not relevant here). This is a template project to use for any machine learning pipeline and prediction app.
+The trained model classifies images into two classes "Healthy" or "Coccidiosis"(the task itself not relevant here but in this case it refers to detecting a chicken disease based on fecal images). This is a template project to use for any machine learning pipeline and prediction app.
 
 ## Workflows
 1. For every pipeline the artifact configuration (input/outputs destination) is added to the config.yaml. (Open and give a quick look at config.yaml)
