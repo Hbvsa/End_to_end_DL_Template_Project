@@ -2,7 +2,7 @@
 
 ## Intro
 
-![Project high level overview](https://github.com/Hbvsa/End_to_end_DL_Template_Project/blob/main/assets/Drawing%202024-06-19%2018.23.24.excalidraw.md)
+![Project high level overview](assets/Drawing 2024-06-19 18.23.24.excalidraw.png)
 
 This project demonstrates how to create data ingestion, model training, evaluation and prediction pipelines. An app is also built using Gradio to interact with the model locally using a simple interface. A dockerfile is also provided to build a docker image of the project. The docker image was deployed in a Google Cloud Run service to test the remote app deployability. Alternatively the model was also deployed to an Hugging Face space. This is a template project to use for any machine learning pipeline and prediction app.
 # How to run the project?
@@ -25,7 +25,7 @@ python app.py
 ```
 
 # Project Template Explanation
-![[Drawing 2024-06-19 18.55.28.excalidraw|1080]]
+![Pipelines overview](assets/Drawing 2024-06-19 18.55.28.excalidraw.png)
 
 The yaml config file located in the config/config.yaml path is responsible for indicating where all the artifacts (e.g., dataset, model weights...) will be loaded from and stored. The yaml config file located at params.yaml indicates the model training parameters.The configuration manager class in src/cnnClassifier/config/configuration.py loads this config file and returns a class with the necessary parameters for each different code step.
 
